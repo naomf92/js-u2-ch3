@@ -38,9 +38,13 @@ function getData() {
 /*fetchを使ってデータを取得します。*/
 function fetchData() {
   const url = `${endpoint}/properties/1`
-  fetch("http://localhost:3000/properties/1")
-  .then((response) => {})
-  .catch((error)=> {})
+  fetch(url)
+  .then((response) => {
+
+  })
+  .catch((error)=> {
+
+  })
 }
 
 {
