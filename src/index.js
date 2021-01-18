@@ -28,19 +28,19 @@ function handleClick(e) {
 }
 
 function getData() {
-  /* 
-    fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。 
+  /*
+    fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。
     成功ならpropertyDataをPromise.resolveで返します。
     失敗ならエラーメッセージをPromise.rejectで返します。
   */
 }
 
-
+/*fetchを使ってデータを取得します。*/
 function fetchData() {
   const url = `${endpoint}/properties/1`
-  /* 
-    fetchを使ってデータを取得します。
-  */
+  fetch("http://localhost:3000/properties/1")
+  .then((response) => {})
+  .catch((error)=> {})
 }
 
 {
