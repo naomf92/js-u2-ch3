@@ -40,9 +40,12 @@ function fetchData() {
   const url = `${endpoint}/properties/1`
   const initObj = {
     method: "GET",
-    // mode:
-    // cache:
-    // headers:
+    mode: 'cores',
+    cache: 'default',
+    headers:{
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
     // body:
   }
   fetch(url, initObj)
