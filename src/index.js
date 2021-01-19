@@ -38,13 +38,14 @@ function getData() {
 /*fetchを使ってデータを取得します。*/
 function fetchData() {
   const url = `${endpoint}/properties/1`
-  fetch(url)
-  .then((response) => {
-
-  })
-  .catch((error)=> {
-
-  })
+  const initObj = {
+    method: "GET",
+    // mode:
+    // cache:
+    // headers:
+    // body:
+  }
+  fetch(url, initObj)
 }
 
 {

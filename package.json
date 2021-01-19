@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "node-server": "node ./server.js",
-    "dev-server": "webpack serve"
+    "dev-server": "webpack serve",
+    "start": "node ./server.js webpack serve"
   },
   "keywords": [],
   "author": "",
