@@ -27,12 +27,11 @@ function handleClick(e) {
     })
 }
 
+/*fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。成功ならpropertyDataをPromise.resolveで返します。失敗ならエラーメッセージをPromise.rejectで返します。*/
 function getData() {
-  /*
-    fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。
-    成功ならpropertyDataをPromise.resolveで返します。
-    失敗ならエラーメッセージをPromise.rejectで返します。
-  */
+  // fetchData()
+  // .then((response) => {})
+  // .catch((error) => {})
 }
 
 /*fetchを使ってデータを取得します。*/
