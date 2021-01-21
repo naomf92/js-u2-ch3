@@ -35,7 +35,7 @@ function getData() {
 }
 
 /*fetchを使ってデータを取得します。*/
-function fetchData(propertyId) {
+function fetchData(propertyId) {// idでも意味が通じるので短くいきましょう。初期値は今回は既に1と代入しておいて大丈夫です
   // propertyのidを文字列の数値で入れるのではなく、引数で渡すと1件以上ある時でも対応しやすいです
   // ヒント: propertyのidを引数として用意しておくと良さそうですね
   const url = `${endpoint}/properties/${propertyId}`
