@@ -35,10 +35,10 @@ function getData() {
 }
 
 /*fetchを使ってデータを取得します。*/
-function fetchData() {
+function fetchData(propertyId) {
   // propertyのidを文字列の数値で入れるのではなく、引数で渡すと1件以上ある時でも対応しやすいです
   // ヒント: propertyのidを引数として用意しておくと良さそうですね
-  const url = `${endpoint}/properties/1`
+  const url = `${endpoint}/properties/${propertyId}`
   const initObj = {
     method: "GET",
     mode: 'cores',
@@ -46,8 +46,7 @@ function fetchData() {
     headers:{
       'Accept': 'application/json',
       'Content-Type': 'application/json'
-    },
-    // body:
+    }
   }
   fetch(url, initObj)
 }
