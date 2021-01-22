@@ -35,19 +35,16 @@ function getData() {
 }
 
 /*fetchを使ってデータを取得します。*/
-function fetchData(id=1) {// 引数idに初期値を宣言時に代入する方法があります
-  // let id = 1; コンパイル時にエラーが出ま。理由は引数の宣言は関数宣言時にしているためです
+function fetchData(id=1) {
   const url = `${endpoint}/properties/${id}`
   const initObj = {
     method: "GET",
-    // mode: 'cores', coresの値が不適切だと出るので消しましょう
     cache: 'default',
     headers:{
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     }
   }
-  // console.log(); でfetch(url, initObj)に格納されている値を検証しましょう
   console.log(fetch(url, initObj))
   return fetch(url, initObj)
   // この関数fetchDataが最終的に返す「返り値」はなんでしょうか？
