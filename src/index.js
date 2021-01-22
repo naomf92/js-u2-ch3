@@ -35,8 +35,9 @@ function getData() {
 }
 
 /*fetchを使ってデータを取得します。*/
-function fetchData(propertyId) {// idでも意味が通じるので短くいきましょう。初期値は今回は既に1と代入しておいて大丈夫です
-  const url = `${endpoint}/properties/${propertyId}`
+function fetchData(id) {// idでも意味が通じるので短くいきましょう。初期値は今回は既に1と代入しておいて大丈夫です
+  let id = 1;
+  const url = `${endpoint}/properties/${id}`
   const initObj = {
     method: "GET",
     mode: 'cores',
