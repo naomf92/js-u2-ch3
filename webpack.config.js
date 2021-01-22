@@ -8,8 +8,8 @@ module.exports = {
     filename: './bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
-  devServer: {
-    publicPath: '/dist/bundle.js',
+  devServer: {// 以下'/dist/bundle.js'だとserver.jsに格納したデータをAPIで取得できないので、'/'に変更しています
+    publicPath: '/',
     hot: true,
     hotOnly: true,
     watchContentBase: true,
