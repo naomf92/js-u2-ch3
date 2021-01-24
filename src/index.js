@@ -50,7 +50,7 @@ function fetchData(id=1) {
   // この関数fetchDataが最終的に返す「返り値」はなんでしょうか？
 }
 
-{// クリックされたときに関数fetchDataが呼び出されるようにすると、上記のconsole.logの内容が検証しやすくなります
+{
   const button1 = document.getElementById('button1');
   button1.addEventListener("click", fetchData);
 }
