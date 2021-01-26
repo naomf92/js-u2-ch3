@@ -29,9 +29,17 @@ function handleClick(e) {
 
 /*fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。成功ならpropertyDataをPromise.resolveで返します。失敗ならエラーメッセージをPromise.rejectで返します。*/
 function getData() {
-  // fetchData()
-  // .then((response) => {})
-  // .catch((error) => {})
+  console.log('関数getData内のfetchData呼び出し');
+  fetchData().then((res) => {
+    if (res.status !== 200) {
+      console.log()
+      //return Promise.reject();
+    } else {
+      console.log()
+      //return Promise.resolve();
+    }
+    console.log(res)
+  })
 }
 
 /*fetchを使ってデータを取得します。*/
@@ -45,12 +53,10 @@ function fetchData(id=1) {
       'Content-Type': 'application/json'
     }
   }
-  console.log(fetch(url, initObj))
-  return fetch(url, initObj)
-  // この関数fetchDataが最終的に返す「返り値」はなんでしょうか？
+  return fetch(url, initObj);
 }
 
 {
   const button1 = document.getElementById('button1');
-  button1.addEventListener("click", fetchData);
+  button1.addEventListener("click", getData);
 }
