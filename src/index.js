@@ -29,16 +29,16 @@ function handleClick(e) {
 
 /*fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。成功ならpropertyDataをPromise.resolveで返します。失敗ならエラーメッセージをPromise.rejectで返します。*/
 function getData() {
-  console.log('関数getData内のfetchData呼び出し');
   fetchData().then((res) => {
+    const json = res.json();
+    console.log(json);
     if (res.status !== 200) {
-      console.log()
+      //console.log();
       //return Promise.reject();
     } else {
-      console.log()
+      //console.log();
       //return Promise.resolve();
     }
-    console.log(res)
   })
 }
 
