@@ -33,6 +33,8 @@ function getData() {
     const json = res.json();
     console.log(json);
     if (res.status !== 200) {
+      // こちらの条件に当てはまった場合、rejectを「うまく」返すには、どうしたら良いでしょうか？
+      // ヒントはSlackのスクショです
       //console.log();
       //return Promise.reject();
     } else {
@@ -43,7 +45,7 @@ function getData() {
 }
 
 /*fetchを使ってデータを取得します。*/
-function fetchData(id=1) {
+function fetchData(id=2) {// 検証のため、わざとAPIでJSON形式のデータが取得できないURLにリダイレクトさせます
   const url = `${endpoint}/properties/${id}`
   const initObj = {
     method: "GET",
