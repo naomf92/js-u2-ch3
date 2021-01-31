@@ -31,12 +31,12 @@ function handleClick(e) {
 function getData() {
   fetchData().then((res) => {
     const json = res.json();
-    console.log(json);
+    //console.log(json);
     if (res.status !== 200) {
-      // こちらの条件に当てはまった場合、rejectを「うまく」返すには、どうしたら良いでしょうか？
-      // ヒントはSlackのスクショです
-      //console.log();
-      //return Promise.reject();
+      json.then((result) => {
+        console.log(result.message);
+        return Promise.reject(result.message);
+      })
     } else {
       //console.log();
       //return Promise.resolve();
