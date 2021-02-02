@@ -18,10 +18,11 @@ function handleClick(e) {
         </div>
       `
     })
-    .catch((e) => {
+    .catch((error) => {
+      console.log(error)
       mainEl.innerHTML = `
         <div className="property-info-wrapper">
-          <p>${e.message}</p>
+          <p>${error.message}</p>
         </div>
       `
     })
@@ -29,23 +30,20 @@ function handleClick(e) {
 
 /*fetchDataを呼び出し、responseのステータスを元にデータ取得成功か失敗かを判断しましょう。成功ならpropertyDataをPromise.resolveで返します。失敗ならエラーメッセージをPromise.rejectで返します。*/
 function getData() {
-  fetchData().then((res) => {
+  return fetchData().then((res) => {
     const json = res.json();
-    //console.log(json);
     if (res.status !== 200) {
       json.then((result) => {
-        console.log(result.message);
         return Promise.reject(result.message);
       })
     } else {
-      //console.log();
-      //return Promise.resolve();
+        return json;
     }
   })
 }
 
 /*fetchを使ってデータを取得します。*/
-function fetchData(id=2) {// 検証のため、わざとAPIでJSON形式のデータが取得できないURLにリダイレクトさせます
+function fetchData(id=1) {// 検証のため、わざとAPIでJSON形式のデータが取得できないURLにリダイレクトさせます
   const url = `${endpoint}/properties/${id}`
   const initObj = {
     method: "GET",
@@ -60,5 +58,5 @@ function fetchData(id=2) {// 検証のため、わざとAPIでJSON形式のデ�
 
 {
   const button1 = document.getElementById('button1');
-  button1.addEventListener("click", getData);
+  button1.addEventListener("click", handleClick);
 }
